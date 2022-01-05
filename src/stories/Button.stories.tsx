@@ -1,7 +1,6 @@
 import React from 'react'
 import { Meta, Story } from '@storybook/react/types-6-0'
 import { Button } from 'components/atoms/Button'
-import { SiliconButtonProps } from 'types/button'
 import { abbrStories } from 'utils/abbreviation'
 
 export default {
@@ -42,7 +41,7 @@ export default {
   },
 } as Meta
 
-export const Default: Story<SiliconButtonProps> = (args) => <Button {...args} />
+export const Default: Story<any> = (args) => <Button {...args} />
 
 Default.args = {
   variant: 'primary',

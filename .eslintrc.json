@@ -44,6 +44,7 @@
     "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
     "@typescript-eslint/indent": "off",
     "@typescript-eslint/ban-types": "off",
-    "import/no-unresolved": "off"
+    "import/no-unresolved": "off",
+    "react/prop-types": "off"
   }
 }
