@@ -1,4 +1,4 @@
-export type StrOrNumber = string | number;
+export type StrOrNumber = string | number
 
 export type AbbreviationType =
   | 'align'
@@ -41,7 +41,6 @@ export type AbbreviationType =
   | 'tt'
   | 'w'
   | 'ws'
-  | 'z';
+  | 'z'
 
-export interface Abbreviation
-  extends Partial<Record<AbbreviationType, StrOrNumber>> {}
+export type Abbreviation = Partial<Record<AbbreviationType, StrOrNumber>>

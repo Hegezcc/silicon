@@ -10,4 +10,4 @@ export const parameters = {
     default: 'silicon',
     values: [{ name: 'silicon', value: '#28293d' }],
   },
-};
+}

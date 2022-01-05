@@ -1,4 +1,4 @@
-import { AbbreviationType } from 'types/abbreviation';
+import { AbbreviationType } from 'types/abbreviation'
 
 export const aliases: Record<AbbreviationType, string> = {
   align: 'align-items',
@@ -42,7 +42,7 @@ export const aliases: Record<AbbreviationType, string> = {
   w: 'width',
   ws: 'white-space',
   z: 'z-index',
-};
+}
 
 export const aliasesInArray: Array<AbbreviationType> = [
   'align',
@@ -86,7 +86,7 @@ export const aliasesInArray: Array<AbbreviationType> = [
   'w',
   'ws',
   'z',
-];
+]
 
-export const suffixX = ['mx', 'px'];
-export const suffixY = ['my', 'py'];
+export const suffixX = ['mx', 'px']
+export const suffixY = ['my', 'py']

@@ -1,7 +1,7 @@
-import { Meta, Story } from '@storybook/react/types-6-0';
-import { Spinner } from 'components/atoms/Spinner';
-import { SiliconSpinnerProps } from 'types/spinner';
-import React from 'react';
+import { Meta, Story } from '@storybook/react/types-6-0'
+import { Spinner } from 'components/atoms/Spinner'
+import { SiliconSpinnerProps } from 'types/spinner'
+import React from 'react'
 
 export default {
   title: 'silicon/Atoms/Spinner',
@@ -20,12 +20,10 @@ export default {
       control: 'number',
     },
   },
-} as Meta;
+} as Meta
 
-export const Default: Story<SiliconSpinnerProps> = (args) => (
-  <Spinner {...args} />
-);
+export const Default: Story<SiliconSpinnerProps> = (args) => <Spinner {...args} />
 
 Default.args = {
   size: 'md',
-};
+}

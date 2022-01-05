@@ -1,2 +1,2 @@
-export * from 'atoms/Button';
-export * from 'atoms/Spinner';
+export * from 'atoms/Button'
+export * from 'atoms/Spinner'

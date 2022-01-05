@@ -1,15 +1,15 @@
-export type SpinnerSize = 'sm' | 'md' | 'lg' | 'xl';
+export type SpinnerSize = 'sm' | 'md' | 'lg' | 'xl'
 
 export interface SiliconSpinnerProps {
-  size?: SpinnerSize | string;
-  color?: string;
-  borderWidth?: number | string;
+  size?: SpinnerSize | string
+  color?: string
+  borderWidth?: number | string
 }
 
 export interface StyledSpinnerProps {
-  border: string;
-  borderTop: string;
-  borderRight: string;
-  width: string;
-  height: string;
+  border: string
+  borderTop: string
+  borderRight: string
+  width: string
+  height: string
 }

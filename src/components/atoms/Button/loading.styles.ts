@@ -2,7 +2,7 @@ const defaultLoadingStyles = {
   cursor: 'not-allowed',
   boxShadow: 'none',
   pointerEvents: 'none',
-};
+}
 
 export const LOADING_STYLES = {
   primary: {
@@ -22,4 +22,4 @@ export const LOADING_STYLES = {
     border: '2px solid #4F5275',
     ...defaultLoadingStyles,
   },
-};
+}

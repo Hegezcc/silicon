@@ -12,4 +12,4 @@ export const SECONDARY_STYLES = {
   '&:active': {
     boxShadow: 'none',
   },
-} as const;
+} as const

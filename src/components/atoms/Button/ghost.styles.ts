@@ -11,4 +11,4 @@ export const GHOST_STYLES = {
     color: '#6E7198',
     cursor: 'not-allowed',
   },
-} as const;
+} as const

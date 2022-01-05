@@ -1,22 +1,20 @@
-import { Abbreviation } from 'types/abbreviation';
-import { ButtonProps, WithCSSAttributes } from './props';
-import { SpinnerSize } from './spinner';
+import { Abbreviation } from 'types/abbreviation'
+import { ButtonProps, WithCSSAttributes } from './props'
+import { SpinnerSize } from './spinner'
 
-export type ButtonVariants = 'primary' | 'secondary' | 'tertiary' | 'ghost';
-export type ButtonSize = 'unset' | 'sm' | 'md' | 'lg' | '1/2' | 'full';
+export type ButtonVariants = 'primary' | 'secondary' | 'tertiary' | 'ghost'
+export type ButtonSize = 'unset' | 'sm' | 'md' | 'lg' | '1/2' | 'full'
 
 interface CustomButtonProps extends WithCSSAttributes<ButtonProps> {
-  variant?: ButtonVariants;
-  children?: React.ReactNode;
-  text?: string;
-  size?: ButtonSize;
-  _hover?: React.CSSProperties & Abbreviation;
-  leftIcon?: React.ReactNode;
-  rightIcon?: React.ReactNode;
-  loading?: boolean;
-  spinnerSize?: SpinnerSize;
+  variant?: ButtonVariants
+  children?: React.ReactNode
+  text?: string
+  size?: ButtonSize
+  _hover?: React.CSSProperties & Abbreviation
+  leftIcon?: React.ReactNode
+  rightIcon?: React.ReactNode
+  loading?: boolean
+  spinnerSize?: SpinnerSize
 }
 
-type CustomButtonPropsWithAbbreviation = CustomButtonProps & Abbreviation;
-
-export interface SiliconButtonProps extends CustomButtonPropsWithAbbreviation {}
+export type SiliconButtonProps = CustomButtonProps & Abbreviation

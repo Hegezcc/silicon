@@ -3,7 +3,7 @@ export const DEFAULT_SIZE = {
   width: '116px',
   height: '48px',
   fontSize: '16px',
-};
+}
 
 export const BUTTON_SIZES = {
   unset: {
@@ -34,4 +34,4 @@ export const BUTTON_SIZES = {
     ...DEFAULT_SIZE,
     width: '100%',
   },
-} as const;
+} as const

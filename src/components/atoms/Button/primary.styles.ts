@@ -14,4 +14,4 @@ export const PRIMARY_STYLES = {
     color: 'rgba(255, 255, 255, 0.6)',
     cursor: 'not-allowed',
   },
-} as const;
+} as const
