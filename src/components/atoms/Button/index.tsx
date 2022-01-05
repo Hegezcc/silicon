@@ -20,7 +20,6 @@ export const Button = forwardRef<HTMLButtonElement, SiliconButtonProps>(
       rightIcon,
       loading = false,
       spinnerSize = 'md',
-
       ...props
     },
     ref,
@@ -42,7 +41,7 @@ export const Button = forwardRef<HTMLButtonElement, SiliconButtonProps>(
     }
 
     let loadingStyles = {}
-    if (loading) loadingStyles = { ...LOADING_STYLES[variant] }
+    if (loading) loadingStyles = { ...LOADING_STYLES[variant], ...btnSize }
 
     useEffect(() => {
       if (customRef.current) {
@@ -51,7 +50,7 @@ export const Button = forwardRef<HTMLButtonElement, SiliconButtonProps>(
           height: customRef.current.offsetHeight + 'px',
         })
       }
-    }, [])
+    }, [text, children])
 
     return (
       <StyledButton
@@ -60,7 +59,6 @@ export const Button = forwardRef<HTMLButtonElement, SiliconButtonProps>(
         {...abbreviations}
         {...hoverStyles}
         {...loadingStyles}
-        {...btnSize}
         {...props}
         ref={mergeRefs(customRef, ref)}
       >
