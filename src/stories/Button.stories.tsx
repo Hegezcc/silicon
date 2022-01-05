@@ -77,3 +77,38 @@ Ghost.args = {
   size: 'unset',
   text: 'Ghost',
 }
+
+export const Small = Default.bind({})
+Small.args = {
+  variant: 'primary',
+  size: 'sm',
+  text: 'Small',
+}
+
+export const Medium = Default.bind({})
+Medium.args = {
+  variant: 'primary',
+  size: 'md',
+  text: 'Medium',
+}
+
+export const Large = Default.bind({})
+Large.args = {
+  variant: 'primary',
+  size: 'lg',
+  text: 'Large',
+}
+
+export const Half = Default.bind({})
+Half.args = {
+  variant: 'primary',
+  size: '1/2',
+  text: 'Half',
+}
+
+export const Full = Default.bind({})
+Full.args = {
+  variant: 'primary',
+  size: 'full',
+  text: 'Full',
+}
