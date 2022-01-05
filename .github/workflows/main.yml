@@ -22,7 +22,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
-      - run: npm install --ignore-scripts && npm run build-storybook -s public
+      - run: npm install --ignore-scripts && npm run build-storybook
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.1.4

@@ -1,14 +1,11 @@
 {
   "name": "silicon-design-system",
   "version": "0.1.16",
-  "dependencies": {
-    "styled-components": "^5.3.3"
-  },
   "scripts": {
     "build": "tsc && tsc-alias",
     "storybook": "start-storybook -p 6006",
     "sb": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook",
+    "build-storybook": "build-storybook -s public",
     "lint": "eslint --ignore-path .gitignore --ext .js,.ts,.tsx .",
     "prepare": "husky install",
     "check-format": "prettier --check ./**/*.{ts,tsx,js,jsx}",
@@ -52,6 +49,9 @@
       "last 1 safari version"
     ]
   },
+  "dependencies": {
+    "styled-components": "^5.3.3"
+  },
   "peerDependencies": {
     "react": ">=17.0.2",
     "react-dom": ">=17.0.2"
@@ -74,8 +74,9 @@
     "@typescript-eslint/eslint-plugin": "^5.9.0",
     "@typescript-eslint/parser": "^5.9.0",
     "eslint": "^7.32.0",
-    "eslint-config-airbnb-typescript": "^16.1.0",
+    "eslint-config-airbnb": "^19.0.4",
     "eslint-config-prettier": "^8.3.0",
+    "eslint-import-resolver-typescript": "^2.5.0",
     "eslint-plugin-import": "^2.25.4",
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-prettier": "^4.0.0",

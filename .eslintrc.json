@@ -3,11 +3,21 @@
     "browser": true,
     "es2021": true
   },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"],
+        "moduleDirectory": ["node_modules", "src/"]
+      }
+    }
+  },
   "extends": [
     "plugin:react/recommended",
     "plugin:prettier/recommended",
     "plugin:@typescript-eslint/recommended",
-    "airbnb-typescript"
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:import/typescript"
   ],
   "ignorePatterns": ["commitlint.config.js"],
   "parser": "@typescript-eslint/parser",
@@ -19,17 +29,13 @@
     "sourceType": "module",
     "project": ["./tsconfig.json"]
   },
-  "settings": {
-    "import/resolver": {
-      "node": {
-        "extensions": [".js", ".jsx", ".ts", ".tsx"]
-      }
-    }
-  },
+
   "plugins": ["react", "@typescript-eslint", "prettier", "import"],
   "rules": {
     "@typescript-eslint/semi": "off",
     "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
-    "@typescript-eslint/indent": "off"
+    "@typescript-eslint/indent": "off",
+    "@typescript-eslint/ban-types": "off",
+    "import/no-unresolved": "off"
   }
 }

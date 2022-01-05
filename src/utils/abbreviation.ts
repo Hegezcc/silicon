@@ -23,6 +23,7 @@ export const helper = ({
 }: {
   attr: string
   value: StrOrNumber
+  // eslint-disable-next-line  @typescript-eslint/ban-types
   abbr: object
 }) => {
   const res = abbr

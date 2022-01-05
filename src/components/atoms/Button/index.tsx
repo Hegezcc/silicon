@@ -20,10 +20,13 @@ export const Button: React.FC<SiliconButtonProps> = ({
   ...props
 }) => {
   const ref = useRef<HTMLButtonElement>()
-  const [width, setWidth] = useState(BUTTON_SIZES[size].width)
+  const [btnSize, setBtnSize] = useState({
+    width: BUTTON_SIZES[size].width,
+    height: BUTTON_SIZES[size].height,
+  })
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const abbreviations: any = abbreviation({ pos: 'relative', width, ...props })
+  const abbreviations: any = abbreviation({ pos: 'relative', ...props })
   const abbrHover = abbreviation(_hover)
   const hoverStyles = {
     ':hover': {
@@ -37,7 +40,10 @@ export const Button: React.FC<SiliconButtonProps> = ({
 
   useEffect(() => {
     if (ref.current) {
-      setWidth(ref.current.offsetWidth + 'px')
+      setBtnSize({
+        width: ref.current.offsetWidth + 'px',
+        height: ref.current.offsetHeight + 'px',
+      })
     }
   }, [])
 
@@ -48,6 +54,7 @@ export const Button: React.FC<SiliconButtonProps> = ({
       {...abbreviations}
       {...hoverStyles}
       {...loadingStyles}
+      {...btnSize}
       {...props}
       ref={ref}
     >
