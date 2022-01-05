@@ -5,7 +5,7 @@ import { SpinnerSize } from './spinner'
 export type ButtonVariants = 'primary' | 'secondary' | 'tertiary' | 'ghost'
 export type ButtonSize = 'unset' | 'sm' | 'md' | 'lg' | '1/2' | 'full'
 
-interface CustomButtonProps extends WithCSSAttributes<ButtonProps> {
+interface CustomButtonProps extends Omit<WithCSSAttributes<ButtonProps>, 'css'> {
   variant?: ButtonVariants
   children?: React.ReactNode
   text?: string

@@ -1,6 +1,6 @@
 {
   "name": "silicon-design-system",
-  "version": "0.1.18",
+  "version": "0.1.20",
   "scripts": {
     "build": "tsc && tsc-alias",
     "storybook": "start-storybook -p 6006",

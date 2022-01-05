@@ -20,7 +20,6 @@ export const Button = forwardRef<HTMLButtonElement, SiliconButtonProps>(
       rightIcon,
       loading = false,
       spinnerSize = 'md',
-
       ...props
     },
     ref,
