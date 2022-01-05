@@ -19,7 +19,15 @@
     "plugin:import/warnings",
     "plugin:import/typescript"
   ],
-  "ignorePatterns": ["commitlint.config.js"],
+  "ignorePatterns": [
+    "commitlint.config.js",
+    "storybook-static/**",
+    "node_modules/**",
+    "dist/**",
+    "build/**",
+    "coverage/**",
+    "*.d.ts"
+  ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaFeatures": {

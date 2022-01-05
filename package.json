@@ -1,11 +1,11 @@
 {
   "name": "silicon-design-system",
-  "version": "0.1.16",
+  "version": "0.1.17",
   "scripts": {
     "build": "tsc && tsc-alias",
     "storybook": "start-storybook -p 6006",
     "sb": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -s public",
+    "build-storybook": "build-storybook",
     "lint": "eslint --ignore-path .gitignore --ext .js,.ts,.tsx .",
     "prepare": "husky install",
     "check-format": "prettier --check ./**/*.{ts,tsx,js,jsx}",

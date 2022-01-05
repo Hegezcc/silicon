@@ -1,2 +1,4 @@
 node_modules/**
 commitlint.config.js
+storybook-static/**
+dist/**
