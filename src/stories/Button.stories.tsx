@@ -1,3 +1,4 @@
+import React from 'react';
 import { Meta, Story } from '@storybook/react/types-6-0';
 import { Button } from 'components/atoms/Button';
 import { SiliconButtonProps } from 'types/button';
@@ -17,6 +18,12 @@ export default {
       control: {
         type: 'radio',
         options: ['unset', 'sm', 'md', 'lg', '1/2', 'full'],
+      },
+    },
+    spinnerSize: {
+      control: {
+        type: 'radio',
+        options: ['sm', 'md', 'lg', 'xl'],
       },
     },
     disabled: {

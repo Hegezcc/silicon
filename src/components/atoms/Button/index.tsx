@@ -17,10 +17,11 @@ export const Button: React.FC<SiliconButtonProps> = ({
   rightIcon,
   loading = false,
   disabled = false,
+  spinnerSize = 'md',
   ...props
 }) => {
   const ref = useRef<HTMLButtonElement>();
-  const [width, setWidth] = useState('auto');
+  const [width, setWidth] = useState(BUTTON_SIZES[size].width);
 
   const abbreviations: any = abbreviation({ pos: 'relative', width, ...props });
   const abbrHover = abbreviation(_hover);
@@ -35,12 +36,10 @@ export const Button: React.FC<SiliconButtonProps> = ({
   if (loading) loadingStyles = { ...LOADING_STYLES[variant] };
 
   useEffect(() => {
-    let width = 'auto';
     if (ref.current) {
-      width = ref.current.offsetWidth + 'px';
+      const width = ref.current.offsetWidth + 'px';
+      setWidth(width);
     }
-
-    setWidth(width);
   }, []);
 
   return (
@@ -53,7 +52,7 @@ export const Button: React.FC<SiliconButtonProps> = ({
       {...props}
       ref={ref}
     >
-      {loading && <Spinner size="sm" />}
+      {loading && <Spinner size={spinnerSize} />}
 
       {leftIcon && !loading && <LeftIconButton>{leftIcon}</LeftIconButton>}
       {loading ? null : text ? text : children}

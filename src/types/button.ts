@@ -1,5 +1,6 @@
 import { Abbreviation } from 'types/abbreviation';
 import { ButtonProps, WithCSSAttributes } from './props';
+import { SpinnerSize } from './spinner';
 
 export type ButtonVariants = 'primary' | 'secondary' | 'tertiary' | 'ghost';
 export type ButtonSize = 'unset' | 'sm' | 'md' | 'lg' | '1/2' | 'full';
@@ -13,6 +14,7 @@ interface CustomButtonProps extends WithCSSAttributes<ButtonProps> {
   leftIcon?: React.ReactNode;
   rightIcon?: React.ReactNode;
   loading?: boolean;
+  spinnerSize?: SpinnerSize;
 }
 
 type CustomButtonPropsWithAbbreviation = CustomButtonProps & Abbreviation;

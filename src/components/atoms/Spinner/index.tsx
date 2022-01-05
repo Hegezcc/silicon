@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import React, { FC } from 'react';
 import { SiliconSpinnerProps } from 'types/spinner';
 import { StyledSpinner } from './styles';
 

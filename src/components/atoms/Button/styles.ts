@@ -22,7 +22,7 @@ export const StyledButton = styled.button((props: React.CSSProperties) => ({
   justifyContent: 'center',
   alignItems: 'center',
   fontWeight: 600,
-  transition: 'all 0.15s ease-out',
+  transition: 'all 0.15s ease-out, background-color 0s linear',
   boxSizing: 'border-box' as const,
   position: 'relative' as const,
   ...props,

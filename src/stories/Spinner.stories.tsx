@@ -1,6 +1,7 @@
 import { Meta, Story } from '@storybook/react/types-6-0';
 import { Spinner } from 'components/atoms/Spinner';
 import { SiliconSpinnerProps } from 'types/spinner';
+import React from 'react';
 
 export default {
   title: 'silicon/Atoms/Spinner',
