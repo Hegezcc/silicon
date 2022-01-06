@@ -24,5 +24,6 @@ export const StyledButton = styled.button((props: React.CSSProperties) => ({
   fontWeight: 600,
   transition: 'all 0.15s ease-out, background-color 0s linear',
   position: 'relative' as const,
+  boxSizing: 'border-box' as const,
   ...props,
 }))
