@@ -1,6 +1,15 @@
 {
   "name": "silicon-design-system",
-  "version": "0.1.20",
+  "version": "0.1.21",
+  "author": "COMPFEST",
+  "homepage": "https://github.com/COMPFEST/silicon",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/COMPFEST/silicon.git"
+  },
+  "bugs": {
+    "url": "https://github.com/COMPFEST/silicon/issues"
+  },
   "scripts": {
     "build": "tsc && tsc-alias",
     "storybook": "start-storybook -p 6006",
@@ -87,8 +96,14 @@
     "immer": "^9.0.7",
     "lint-staged": "^12.1.5",
     "prettier": "2.5.1",
+    "trim": "^1.0.1",
     "tsc-alias": "^1.5.0",
     "typescript": "^4.5.4",
     "webpack": "^5.65.0"
-  }
+  },
+  "keywords": [
+    "react",
+    "react-component"
+  ],
+  "license": "MIT"
 }
