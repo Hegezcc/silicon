@@ -1,4 +1,4 @@
-# Silicon Desgin System
+# Silicon Design System
 
 [![npm version](https://img.shields.io/npm/v/silicon-design-system.svg?style=flat-square)](https://www.npmjs.com/package/silicon-design-system)
 [![npm downloads](https://img.shields.io/npm/dm/silicon-design-system.svg?style=flat-square)](https://www.npmjs.com/package/silicon-design-system)
