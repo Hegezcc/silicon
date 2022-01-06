@@ -54,8 +54,8 @@ export const Button = forwardRef<HTMLButtonElement, SiliconButtonProps>(
 
     return (
       <StyledButton
-        {...VARIANT_STYLES[variant]}
         {...BUTTON_SIZES[size]}
+        {...VARIANT_STYLES[variant]}
         {...abbreviations}
         {...hoverStyles}
         {...loadingStyles}

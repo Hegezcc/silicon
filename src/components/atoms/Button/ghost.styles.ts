@@ -1,5 +1,6 @@
 export const GHOST_STYLES = {
   border: '2px solid #60648B',
+  padding: '10px 30px',
   background: '#323347',
   '&:hover': {
     border: '2px solid #B9BCD9',
