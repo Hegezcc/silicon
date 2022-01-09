@@ -4,6 +4,7 @@ export type AbbreviationType =
   | 'align'
   | 'b'
   | 'bb'
+  | 'bc'
   | 'bg'
   | 'bl'
   | 'bs'

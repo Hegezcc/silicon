@@ -8,6 +8,7 @@ export const SECONDARY_STYLES = {
     background: '#35374f',
     color: 'rgba(255, 255, 255, 0.6)',
     cursor: 'not-allowed',
+    boxShadow: 'none',
   },
   '&:active': {
     boxShadow: 'none',

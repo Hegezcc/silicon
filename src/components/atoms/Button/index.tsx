@@ -36,7 +36,7 @@ export const Button = forwardRef<HTMLButtonElement, SiliconButtonProps>(
     const hoverStyles = {
       ':hover': {
         ...abbrHover,
-        _hover,
+        ..._hover,
       },
     }
 
