@@ -41,6 +41,14 @@ export const ModalVertical: FC<SiliconModalProps> = ({
     showStyles = { display: 'none' }
   }
 
+  let childrenStyles = {}
+
+  if (children)
+    childrenStyles = {
+      width: 'fit-content',
+      maxWidth: 'none',
+    }
+
   let hasButton = false
   if (primaryButton || secondaryButton) {
     hasButton = true
@@ -54,9 +62,12 @@ export const ModalVertical: FC<SiliconModalProps> = ({
   )
 
   return (
-    <StyledModalVertical {...props} {...showStyles}>
+    <StyledModalVertical {...props} {...showStyles} {...childrenStyles}>
       {children ? (
-        children
+        <>
+          {withCloseIcon && <CloseIcon onClick={onClose} />}
+          {children}
+        </>
       ) : (
         <>
           {withCloseIcon && <CloseIcon onClick={onClose} />}
