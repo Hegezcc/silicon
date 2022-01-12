@@ -20,7 +20,8 @@
       "organisms/*": ["components/organisms/*"],
       "types/*": ["types/*"],
       "utils/*": ["utils/*"],
-      "constants/*": ["constants/*"]
+      "constants/*": ["constants/*"],
+      "contexts/*": ["contexts/*"]
     },
     "moduleResolution": "node",
     "resolveJsonModule": true,

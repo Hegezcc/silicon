@@ -13,17 +13,16 @@ const WrapperStyledSearchInput = styled.div((props: React.CSSProperties) => ({
 
 export const SearchInput = forwardRef<HTMLInputElement, SiliconSearchInput>(
   ({ withIcon, placeholder, center, inputSize = 'md', ...props }, ref) => {
-    const wrapref = React.useRef<HTMLDivElement>(null)
-    const customRef = React.useRef<HTMLInputElement>(null)
     const CSS = {
       ...props,
       textAlign: center ? 'center' : 'left',
       paddingLeft: withIcon ? 60 : 30,
     }
-    const wrapCSS = { ...SEARCH_INPUT_SIZE[inputSize], ...props }
+    const wrapCSS = { ...SEARCH_INPUT_SIZE[inputSize], ...props } as any
+
     return (
-      <WrapperStyledSearchInput {...wrapCSS} ref={wrapref}>
-        <StyledSearchInput {...CSS} ref={mergeRefs(customRef, ref)} />
+      <WrapperStyledSearchInput {...wrapCSS}>
+        <StyledSearchInput {...CSS} ref={ref} />
         {withIcon && <SearchIcon />}
       </WrapperStyledSearchInput>
     )
