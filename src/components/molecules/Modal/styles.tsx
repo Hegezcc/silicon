@@ -55,12 +55,13 @@ export const StyledModalButton = styled.p((props: CSSProperties) => ({
   ...props,
 }))
 
-export const StyledModalOverlay = styled.p((props: CSSProperties) => ({
+export const StyledModalOverlay = styled.div((props: CSSProperties) => ({
   position: 'fixed' as const,
   top: 0,
   left: 0,
   width: '100%',
   height: '100%',
+  zIndex: 999998,
   backgroundColor: 'rgba(0, 0, 0, 0.3)',
   ...props,
 }))

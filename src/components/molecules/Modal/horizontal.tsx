@@ -45,7 +45,7 @@ const StyledButtonWrapper = styled.div`
   margin-top: 32px;
 `
 
-export const ModalHorizontal: FC<SiliconModalProps> = ({
+export const ModalHorizontal: FC<Omit<SiliconModalProps, 'children'>> = ({
   image,
   title,
   body,
