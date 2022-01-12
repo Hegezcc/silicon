@@ -28,6 +28,8 @@ export type AbbreviationType =
   | 'minH'
   | 'minW'
   | 'mb'
+  | 'ml'
+  | 'mr'
   | 'mt'
   | 'mx'
   | 'my'
