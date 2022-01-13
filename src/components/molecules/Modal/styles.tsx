@@ -22,7 +22,6 @@ export const StyledModalTitle = styled.h2((props: CSSProperties) => ({
   textAlign: 'center' as const,
   overflowWrap: 'break-word' as const,
   breakWrap: 'break-word' as const,
-  hyphens: 'auto' as const,
   fontSize: '32px',
   maxWidth: '312px',
   ...props,
@@ -41,7 +40,6 @@ export const StyledModalBody = styled.p((props: CSSProperties) => ({
   textAlign: 'center' as const,
   overflowWrap: 'break-word' as const,
   breakWrap: 'break-word' as const,
-  hyphens: 'auto' as const,
   maxWidth: '312px',
   ...props,
 }))
