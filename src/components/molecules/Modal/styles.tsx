@@ -8,7 +8,7 @@ export const StyledModal = styled.div(() => ({
   minWidth: '300px',
   maxWidth: '392px',
   zIndex: 999999,
-  position: 'absolute' as const,
+  position: 'fixed' as const,
   top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
