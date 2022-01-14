@@ -50,6 +50,15 @@ OneButton.args = {
 
 export const TwoButtons = Default.bind({})
 TwoButtons.args = {
-  primaryButton: <Button text="OK" size="1/2" ml="8px" />,
-  secondaryButton: <Button variant="secondary" text="Cancel" size="1/2" />,
+  primaryButton: (
+    <Button text="OK" mt="8px" size="full" _responsive={{ xsm: { mt: 0, w: '50%', ml: '8px' } }} />
+  ),
+  secondaryButton: (
+    <Button
+      variant="secondary"
+      text="Cancel"
+      size="full"
+      _responsive={{ xsm: { mt: 0, w: '50%' } }}
+    />
+  ),
 }

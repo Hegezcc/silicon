@@ -1,27 +1,60 @@
 import React, { FC } from 'react'
 import styled from 'styled-components'
 import { SiliconModalProps } from 'types/modal'
-import {
-  CloseIcon,
-  StyledModal,
-  StyledModalBody,
-  StyledModalButton,
-  StyledModalTitle,
-} from './styles'
-import { MODAL_TYPES_VERTICAL } from './types'
+import { responsive } from 'utils/responsive'
+import { CloseIcon, StyledModal, StyledModalBody, StyledModalTitle } from './styles'
+import { MODAL_TYPES_VERTICAL, MODAL_TYPES_HORIZONTAL } from './types'
 
 export const StyledModalVertical = styled(StyledModal)((props: React.CSSProperties) => ({
   display: 'flex',
   flexDirection: 'column' as const,
   alignItems: 'center',
   justifyContent: 'center',
+  padding: '40px 28px',
+  minWidth: '90vw',
+  '@media (min-width: 320px)': {
+    minWidth: '300px',
+  },
+  '@media (min-width: 480px)': {
+    padding: '40px',
+  },
   ...props,
 }))
 
 const StyledContent = styled.div((props: React.CSSProperties) => ({
-  marginTop: '32px',
+  marginTop: '20px',
+  '@media and screen (min-width: 480px)': {
+    marginTop: '32px',
+  },
   ...props,
 }))
+
+const StyledModalVerticalButton = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 20px;
+  align-items: center;
+  @media (min-width: 480px) {
+    justify-content: center;
+    flex-direction: row;
+    margin-top: 32px;
+  }
+`
+
+const StyledImage = styled.div`
+  display: none;
+  @media (min-width: 480px) {
+    display: flex;
+  }
+`
+
+const StyledImageMobile = styled.div`
+  display: flex;
+  @media (min-width: 480px) {
+    display: none;
+  }
+`
 
 export const ModalVertical: FC<SiliconModalProps> = ({
   withCloseIcon = true,
@@ -34,6 +67,7 @@ export const ModalVertical: FC<SiliconModalProps> = ({
   primaryButton,
   secondaryButton,
   children,
+  _responsive = {},
   ...props
 }) => {
   let showStyles = { display: 'flex' }
@@ -55,14 +89,19 @@ export const ModalVertical: FC<SiliconModalProps> = ({
   }
 
   const buttonElement = (
-    <StyledModalButton>
+    <StyledModalVerticalButton>
       {secondaryButton}
       {primaryButton}
-    </StyledModalButton>
+    </StyledModalVerticalButton>
   )
 
   return (
-    <StyledModalVertical {...props} {...showStyles} {...childrenStyles}>
+    <StyledModalVertical
+      {...responsive(_responsive)}
+      {...showStyles}
+      {...childrenStyles}
+      {...props}
+    >
       {children ? (
         <>
           {withCloseIcon && <CloseIcon onClick={onClose} />}
@@ -71,7 +110,14 @@ export const ModalVertical: FC<SiliconModalProps> = ({
       ) : (
         <>
           {withCloseIcon && <CloseIcon onClick={onClose} />}
-          {image ? image : MODAL_TYPES_VERTICAL[type]}
+          {image ? (
+            image
+          ) : (
+            <>
+              <StyledImage>{MODAL_TYPES_VERTICAL[type]}</StyledImage>
+              <StyledImageMobile>{MODAL_TYPES_HORIZONTAL[type]}</StyledImageMobile>
+            </>
+          )}
           <StyledContent>
             {title && <StyledModalTitle>{title}</StyledModalTitle>}
             {body && <StyledModalBody>{body}</StyledModalBody>}

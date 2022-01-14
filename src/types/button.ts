@@ -1,5 +1,5 @@
 import { Abbreviation } from 'types/abbreviation'
-import { ButtonProps, WithCSSAttributes } from './props'
+import { ButtonProps, Responsive, WithCSSAttributes } from './props'
 import { SpinnerSize } from './spinner'
 
 export type ButtonVariants = 'primary' | 'secondary' | 'tertiary' | 'ghost'
@@ -15,6 +15,7 @@ interface CustomButtonProps extends Omit<WithCSSAttributes<ButtonProps>, 'css'> 
   rightIcon?: React.ReactNode
   loading?: boolean
   spinnerSize?: SpinnerSize
+  _responsive?: Responsive
 }
 
 export type SiliconButtonProps = CustomButtonProps & Abbreviation
