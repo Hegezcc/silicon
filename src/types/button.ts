@@ -12,6 +12,7 @@ interface CustomButtonProps extends Omit<WithCSSAttributes<ButtonProps>, 'css'> 
   size?: ButtonSize
   _hover?: React.CSSProperties & Abbreviation
   leftIcon?: React.ReactNode
+  midIcon?: React.ReactNode
   rightIcon?: React.ReactNode
   loading?: boolean
   spinnerSize?: SpinnerSize

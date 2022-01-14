@@ -19,9 +19,11 @@ export const Button = forwardRef<HTMLButtonElement, SiliconButtonProps>(
       _hover = {},
       leftIcon,
       rightIcon,
+      midIcon,
       loading = false,
       spinnerSize = 'md',
       _responsive = {},
+      className,
       ...props
     },
     ref,
@@ -63,12 +65,13 @@ export const Button = forwardRef<HTMLButtonElement, SiliconButtonProps>(
         {...hoverStyles}
         {...loadingStyles}
         {...props}
+        className={className}
         ref={mergeRefs(customRef, ref)}
       >
         {loading && <Spinner size={spinnerSize} />}
 
         {leftIcon && !loading && <LeftIconButton>{leftIcon}</LeftIconButton>}
-        {loading ? null : text ? text : children}
+        {loading ? null : text ? text : midIcon ?? children}
         {rightIcon && !loading && <RightIconButton>{rightIcon}</RightIconButton>}
       </StyledButton>
     )

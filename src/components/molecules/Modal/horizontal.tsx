@@ -53,6 +53,7 @@ export const ModalHorizontal: FC<Omit<SiliconModalProps, 'children'>> = ({
   withCloseIcon = true,
   onClose,
   primaryButton,
+  className,
   secondaryButton,
   ...props
 }) => {
@@ -84,7 +85,7 @@ export const ModalHorizontal: FC<Omit<SiliconModalProps, 'children'>> = ({
   )
 
   return (
-    <StyledModalHorizontal {...props}>
+    <StyledModalHorizontal className={className} {...props}>
       <div style={{ display: 'flex' }}>
         <StyledIconWrapper>{image ? image : MODAL_TYPES_HORIZONTAL[type]}</StyledIconWrapper>
         <div>

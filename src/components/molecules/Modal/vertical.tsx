@@ -67,6 +67,7 @@ export const ModalVertical: FC<SiliconModalProps> = ({
   primaryButton,
   secondaryButton,
   children,
+  className,
   _responsive = {},
   ...props
 }) => {
@@ -100,6 +101,7 @@ export const ModalVertical: FC<SiliconModalProps> = ({
       {...responsive(_responsive)}
       {...showStyles}
       {...childrenStyles}
+      className={className}
       {...props}
     >
       {children ? (

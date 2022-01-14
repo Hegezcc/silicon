@@ -6,6 +6,7 @@ export const Spinner: FC<SiliconSpinnerProps> = ({
   color = '#fff',
   size = 'md',
   borderWidth = '3px',
+  className,
 }) => {
   const isNumber = typeof borderWidth === 'number'
   const borderWidthStyle = isNumber ? `${borderWidth}px` : borderWidth
@@ -30,6 +31,7 @@ export const Spinner: FC<SiliconSpinnerProps> = ({
     width: spinnerSize,
     height: spinnerSize,
     borderRight: borderTop,
+    className,
   }
 
   return <StyledSpinner {...styles} />

@@ -4,6 +4,7 @@ export interface SiliconSpinnerProps {
   size?: SpinnerSize | string
   color?: string
   borderWidth?: number | string
+  className?: string
 }
 
 export interface StyledSpinnerProps {
