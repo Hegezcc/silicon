@@ -1,5 +1,5 @@
 import { Abbreviation } from 'types/abbreviation'
-import { WithCSSAttributes, DivProps } from './props'
+import { WithCSSAttributes, DivProps, Responsive } from './props'
 import { ReactNode } from 'react'
 
 type ModalType = 'success' | 'warning' | 'danger'
@@ -18,6 +18,7 @@ interface CustomModalProps extends Omit<WithCSSAttributes<DivProps>, 'css' | 're
   body?: string
   show: boolean
   onClose: () => unknown
+  _responsive?: Responsive
 }
 
 export type SiliconModalProps = CustomModalProps & Abbreviation

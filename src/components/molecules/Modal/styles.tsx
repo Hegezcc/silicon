@@ -7,6 +7,7 @@ export const StyledModal = styled.div(() => ({
   backgroundColor: '#373951',
   minWidth: '300px',
   maxWidth: '392px',
+  margin: 'auto',
   zIndex: 999999,
   position: 'fixed' as const,
   top: '50%',
@@ -44,7 +45,7 @@ export const StyledModalBody = styled.p((props: CSSProperties) => ({
   ...props,
 }))
 
-export const StyledModalButton = styled.p((props: CSSProperties) => ({
+export const StyledModalButton = styled.div((props: CSSProperties) => ({
   display: 'flex',
   width: '100%',
   alignItems: 'center',

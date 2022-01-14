@@ -21,6 +21,7 @@ export default {
   },
 } as Meta
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const Default: Story<any> = (args) => <SearchInput {...args} />
 
 Default.args = {

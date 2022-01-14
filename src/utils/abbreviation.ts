@@ -27,7 +27,7 @@ export const helper = ({
   abbr: object
 }) => {
   const res = abbr
-  if (value) {
+  if (typeof value !== 'string' || typeof value !== 'number') {
     let realValue: string | number | null = null
 
     if (suffixX.includes(attr)) {

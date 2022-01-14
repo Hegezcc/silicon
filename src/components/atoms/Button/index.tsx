@@ -7,6 +7,7 @@ import { StyledButton, VARIANT_STYLES } from './styles'
 import { Spinner } from 'components/atoms/Spinner'
 import { LOADING_STYLES } from './loading.styles'
 import { mergeRefs } from 'utils/mergeRefs'
+import { responsive } from 'utils/responsive'
 
 export const Button = forwardRef<HTMLButtonElement, SiliconButtonProps>(
   (
@@ -20,6 +21,7 @@ export const Button = forwardRef<HTMLButtonElement, SiliconButtonProps>(
       rightIcon,
       loading = false,
       spinnerSize = 'md',
+      _responsive = {},
       ...props
     },
     ref,
@@ -57,6 +59,7 @@ export const Button = forwardRef<HTMLButtonElement, SiliconButtonProps>(
         {...BUTTON_SIZES[size]}
         {...VARIANT_STYLES[variant]}
         {...abbreviations}
+        {...responsive(_responsive)}
         {...hoverStyles}
         {...loadingStyles}
         {...props}
