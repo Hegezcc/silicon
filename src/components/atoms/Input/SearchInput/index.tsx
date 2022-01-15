@@ -1,7 +1,7 @@
 import React, { forwardRef } from 'react'
 import styled from 'styled-components'
+import { SiliconSearchInput } from 'types/Input/SearchInput'
 import { abbreviation } from 'utils/abbreviation'
-import { SiliconSearchInput } from '../../../../types/Input/SearchInput'
 import { SEARCH_INPUT_SIZE } from './size.styles'
 import { SearchIcon, StyledSearchInput } from './styles'
 
@@ -12,7 +12,7 @@ const WrapperStyledSearchInput = styled.div((props: React.CSSProperties) => ({
 }))
 
 export const SearchInput = forwardRef<HTMLInputElement, SiliconSearchInput>(
-  ({ withIcon, placeholder, center, inputSize = 'md', ...props }, ref) => {
+  ({ withIcon, center, inputSize = 'md', ...props }, ref) => {
     const CSS = {
       textAlign: center ? 'center' : 'left',
       paddingLeft: withIcon ? 84 : 32,
@@ -25,13 +25,10 @@ export const SearchInput = forwardRef<HTMLInputElement, SiliconSearchInput>(
       ...abbreviation(props),
       ...props,
     } as any;
+
     return (
       <WrapperStyledSearchInput {...wrapCSS}>
-        <StyledSearchInput
-          {...CSS}
-          placeholder={placeholder ?? ''}
-          ref={ref}
-        />
+        <StyledSearchInput {...CSS} ref={ref} />
         {withIcon && <SearchIcon />}
       </WrapperStyledSearchInput>
     )
