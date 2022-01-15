@@ -38,5 +38,7 @@ export const Default: Story<SiliconSearchInput> = (args) => (
 Default.args = {
   withIcon: true,
   center: true,
-  textAlign: 'end',
+  h: 50,
+  w: 400,
+  inputSize: 'unset',
 }

@@ -5,11 +5,10 @@ export const StyledSearchInput = styled.input((props: React.CSSProperties) => ({
   borderRadius: '12px',
   width: '100%',
   border: '2px solid rgba(96, 100, 139, 1)',
-  padding: '12px 30px 12px 30px',
   color: 'rgba(255, 255, 255, 0.6)',
-  fontSize: '16px',
+  padding: '12px 32px 12px 32px',
   fontWeight: '500',
-  lineHeight: '24px',
+  height: '100%',
   background: 'transparent',
   boxSizing: 'border-box' as const,
   '&:hover': {
@@ -36,7 +35,7 @@ export const SearchIcon = () => (
       fill: 'currentcolor',
       position: 'absolute',
       top: '50%',
-      left: '20px',
+      left: '32px',
       transform: 'translateY(-50%)',
     }}
   >

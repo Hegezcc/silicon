@@ -1,5 +1,6 @@
 import React, { forwardRef, useState } from 'react'
 import styled from 'styled-components'
+import { abbreviation } from 'utils/abbreviation'
 import { mergeRefs } from 'utils/mergeRefs'
 import { SiliconSearchInput } from '../../../../types/Input/SearchInput'
 import { SEARCH_INPUT_SIZE } from './size.styles'
@@ -16,11 +17,17 @@ export const SearchInput = forwardRef<HTMLInputElement, SiliconSearchInput>(
     const wrapref = React.useRef<HTMLDivElement>(null)
     const customRef = React.useRef<HTMLInputElement>(null)
     const CSS = {
-      ...props,
       textAlign: center ? 'center' : 'left',
-      paddingLeft: withIcon ? 60 : 30,
+      paddingLeft: withIcon ? 84 : 32,
+      fontSize: '16px',
+      ...abbreviation(props),
+      ...props,
     }
-    const wrapCSS = { ...SEARCH_INPUT_SIZE[inputSize], ...props }
+    const wrapCSS = {
+      ...SEARCH_INPUT_SIZE[inputSize],
+      ...abbreviation(props),
+      ...props,
+    }
     return (
       <WrapperStyledSearchInput {...wrapCSS} ref={wrapref}>
         <StyledSearchInput {...CSS} ref={mergeRefs(customRef, ref)} />
