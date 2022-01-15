@@ -12,7 +12,7 @@ Lightweight and interactive React component
 Get it from npm
 
 ```
-$ npm install silicon-design-system
+$ npm install --save silicon-design-system
 ```
 
 Import and use it in your React app.
@@ -44,4 +44,20 @@ export const Example10 () => {
     <Button variant='secondary' loading={loading} w='10rem' mx='16px'> Another Component </Button>
   )
 }
+
+export const Example11 = () => (
+  <Button
+      text="Your Text"
+      variant="primary" // default variant
+      _hover={{ c: 'orange', bg: 'pink' }}
+      _responsive={{
+        xsm: { bg: 'red' },
+        sm: { bg: 'white' },
+        md: { bg: 'blue' },
+        lg: { bg: 'yellow' },
+        xl: { bg: 'black' },
+        xl2: { bg: 'green' },
+      }}
+    />
+)
 ```

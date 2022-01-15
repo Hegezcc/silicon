@@ -1,7 +1,6 @@
 import React from 'react'
 import { Meta, Story } from '@storybook/react/types-6-0'
 import { SearchInput } from '../../components/atoms/Input/SearchInput'
-import { SiliconSearchInput } from '../../types/Input/SearchInput'
 
 export default {
   title: 'silicon/Atoms/Input/SearchInput',
@@ -22,18 +21,8 @@ export default {
   },
 } as Meta
 
-export const Default: Story<SiliconSearchInput> = (args) => (
-  <div
-    style={{
-      width: '1000px',
-      height: '400px',
-      backgroundColor: 'rgba(40,41,61,1)',
-      padding: '50px',
-    }}
-  >
-    <SearchInput {...args} ref={null} />
-  </div>
-) //background
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export const Default: Story<any> = (args) => <SearchInput {...args} />
 
 Default.args = {
   withIcon: true,
