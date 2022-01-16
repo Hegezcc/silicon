@@ -12,7 +12,6 @@ export const StyledModalVertical = styled(StyledModal)((props: React.CSSProperti
   alignItems: 'center',
   justifyContent: 'center',
   padding: '40px 28px',
-  margin: '0px 32px',
   minWidth: '90vw',
   '@media (min-width: 320px)': {
     minWidth: '300px',
