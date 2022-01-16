@@ -1,6 +1,7 @@
 import React, { FC } from 'react'
 import styled from 'styled-components'
 import { SiliconModalProps } from 'types/modal'
+import { abbreviation } from 'utils/abbreviation'
 import { responsive } from 'utils/responsive'
 import { CloseIcon, StyledModal, StyledModalBody, StyledModalTitle } from './styles'
 import { MODAL_TYPES_VERTICAL, MODAL_TYPES_HORIZONTAL } from './types'
@@ -11,6 +12,7 @@ export const StyledModalVertical = styled(StyledModal)((props: React.CSSProperti
   alignItems: 'center',
   justifyContent: 'center',
   padding: '40px 28px',
+  margin: '0px 32px',
   minWidth: '90vw',
   '@media (min-width: 320px)': {
     minWidth: '300px',
@@ -69,8 +71,20 @@ export const ModalVertical: FC<SiliconModalProps> = ({
   children,
   className,
   _responsive = {},
+  _hover = {},
   ...props
 }) => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const abbreviations: any = abbreviation({ ...props })
+  const abbrHover = abbreviation(_hover)
+
+  const hoverStyles = {
+    ':hover': {
+      ...abbrHover,
+      ..._hover,
+    },
+  }
+
   let showStyles = { display: 'flex' }
   if (!show) {
     showStyles = { display: 'none' }
@@ -101,6 +115,8 @@ export const ModalVertical: FC<SiliconModalProps> = ({
       {...responsive(_responsive)}
       {...showStyles}
       {...childrenStyles}
+      {...abbreviations}
+      {...hoverStyles}
       className={className}
       {...props}
     >

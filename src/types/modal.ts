@@ -19,6 +19,7 @@ interface CustomModalProps extends Omit<WithCSSAttributes<DivProps>, 'css' | 're
   show: boolean
   onClose: () => unknown
   _responsive?: Responsive
+  _hover?: React.CSSProperties & Abbreviation
 }
 
 export type SiliconModalProps = CustomModalProps & Abbreviation
