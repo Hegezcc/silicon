@@ -38,7 +38,7 @@ export const SearchInput = forwardRef<HTMLInputElement, SiliconSearchInput>(
     return (
       <WrapperStyledSearchInput {...wrapCSS}>
         <StyledSearchInput {...CSS} ref={ref} />
-        {withIcon || pesan && content}
+        {(withIcon || pesan) && content}
       </WrapperStyledSearchInput>
     )
   },
