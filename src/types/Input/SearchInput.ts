@@ -8,6 +8,7 @@ export interface CustomSearchInput extends Omit<WithCSSAttributes<InputProps>, '
   withIcon?: boolean
   center?: boolean
   placeholder?: string
+  pesan?: string
   inputSize?: SearchInputSize
   fontSize?: number
 }

@@ -2,16 +2,14 @@ import React from 'react'
 import styled from 'styled-components'
 
 export const StyledSearchInput = styled.input((props: React.CSSProperties) => ({
-  borderRadius: '12px',
   width: '100%',
-  border: '2px solid rgba(96, 100, 139, 1)',
-  padding: '12px 30px 12px 30px',
   color: 'rgba(255, 255, 255, 0.6)',
-  fontSize: '16px',
   fontWeight: '500',
-  lineHeight: '24px',
+  borderWidth: '0px',
+  height: '100%',
   background: 'transparent',
   boxSizing: 'border-box' as const,
+  lineHeight: '24px',
   '&:hover': {
     color: 'white',
   },
@@ -19,7 +17,7 @@ export const StyledSearchInput = styled.input((props: React.CSSProperties) => ({
     color: 'white',
     outline: 'none',
   },
-  '&:focus + svg': {
+  '&:focus + *': {
     color: 'white',
   },
   ...props,
@@ -34,10 +32,7 @@ export const SearchIcon = () => (
     xmlns="http://www.w3.org/2000/svg"
     style={{
       fill: 'currentcolor',
-      position: 'absolute',
-      top: '50%',
-      left: '20px',
-      transform: 'translateY(-50%)',
+      marginRight: '12px',
     }}
   >
     <path
