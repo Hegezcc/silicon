@@ -3,7 +3,6 @@ export const DEFAULT_SIZE = {
   height: '48px',
   fontSize: '16px',
   lineHeight: '24px',
-  padding: '0px 0px 0px 0px',
 }
 
 export const SEARCH_INPUT_SIZE = {
