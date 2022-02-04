@@ -18,6 +18,7 @@ export const Button = forwardRef<HTMLButtonElement, SiliconButtonProps>(
       _hover = {},
       leftIcon,
       rightIcon,
+      midIcon,
       loading = false,
       spinnerSize = 'md',
       _responsive = {},
@@ -71,7 +72,7 @@ export const Button = forwardRef<HTMLButtonElement, SiliconButtonProps>(
           }}
         >
           {leftIcon && <LeftIconButton>{leftIcon}</LeftIconButton>}
-          {text ? text : children}
+          {text ? text : midIcon ?? children}
           {rightIcon && <RightIconButton>{rightIcon}</RightIconButton>}
         </div>
       </StyledButton>
