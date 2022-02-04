@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState, forwardRef } from 'react'
+import React, { forwardRef } from 'react'
 import { SiliconButtonProps } from 'types/button'
 import { abbreviation } from 'utils/abbreviation'
 import { LeftIconButton, RightIconButton } from './icon.styles'
@@ -6,7 +6,6 @@ import { BUTTON_SIZES } from './size.styles'
 import { StyledButton, VARIANT_STYLES } from './styles'
 import { Spinner } from 'components/atoms/Spinner'
 import { LOADING_STYLES } from './loading.styles'
-import { mergeRefs } from 'utils/mergeRefs'
 import { responsive } from 'utils/responsive'
 
 export const Button = forwardRef<HTMLButtonElement, SiliconButtonProps>(
@@ -26,12 +25,6 @@ export const Button = forwardRef<HTMLButtonElement, SiliconButtonProps>(
     },
     ref,
   ) => {
-    const customRef = useRef<HTMLButtonElement>()
-    const [btnSize, setBtnSize] = useState({
-      width: BUTTON_SIZES[size].width,
-      height: BUTTON_SIZES[size].height,
-    })
-
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const abbreviations: any = abbreviation({ pos: 'relative', ...props })
     const abbrHover = abbreviation(_hover)
@@ -43,16 +36,7 @@ export const Button = forwardRef<HTMLButtonElement, SiliconButtonProps>(
     }
 
     let loadingStyles = {}
-    if (loading) loadingStyles = { ...LOADING_STYLES[variant], ...btnSize }
-
-    useEffect(() => {
-      if (customRef.current) {
-        setBtnSize({
-          width: customRef.current.offsetWidth + 'px',
-          height: customRef.current.offsetHeight + 'px',
-        })
-      }
-    }, [text, children])
+    if (loading) loadingStyles = { ...LOADING_STYLES[variant] }
 
     return (
       <StyledButton
@@ -63,13 +47,33 @@ export const Button = forwardRef<HTMLButtonElement, SiliconButtonProps>(
         {...hoverStyles}
         {...loadingStyles}
         {...props}
-        ref={mergeRefs(customRef, ref)}
+        ref={ref}
       >
-        {loading && <Spinner size={spinnerSize} />}
+        <div
+          style={{
+            position: 'absolute',
+            left: '50%',
+            top: '50%',
+            transform: 'translate(-50%, -50%)',
+            opacity: loading ? 1 : 0,
+            zIndex: loading ? 1 : 0,
+            transition: 'opacity 0.3s ease-in-out',
+          }}
+        >
+          <Spinner size={spinnerSize} />
+        </div>
 
-        {leftIcon && !loading && <LeftIconButton>{leftIcon}</LeftIconButton>}
-        {loading ? null : text ? text : children}
-        {rightIcon && !loading && <RightIconButton>{rightIcon}</RightIconButton>}
+        <div
+          style={{
+            opacity: loading ? 0 : 1,
+            zIndex: loading ? 0 : 1,
+            transition: 'opacity 0.3s ease-in-out',
+          }}
+        >
+          {leftIcon && <LeftIconButton>{leftIcon}</LeftIconButton>}
+          {text ? text : children}
+          {rightIcon && <RightIconButton>{rightIcon}</RightIconButton>}
+        </div>
       </StyledButton>
     )
   },
