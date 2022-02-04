@@ -37,7 +37,10 @@ export const Button = forwardRef<HTMLButtonElement, SiliconButtonProps>(
     }
 
     let loadingStyles = {}
-    if (loading) loadingStyles = { ...LOADING_STYLES[variant] }
+    if (loading)
+      loadingStyles = {
+        ...LOADING_STYLES[variant],
+      }
 
     return (
       <StyledButton
@@ -69,6 +72,9 @@ export const Button = forwardRef<HTMLButtonElement, SiliconButtonProps>(
             opacity: loading ? 0 : 1,
             zIndex: loading ? 0 : 1,
             transition: 'opacity 0.3s ease-in-out',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
           }}
         >
           {leftIcon && <LeftIconButton>{leftIcon}</LeftIconButton>}
